@@ -14,7 +14,7 @@ import axios from 'axios';
 export default {
   data: function () {
     return {
-      memos: "memos"  //setMemo内のthis.memos に対応
+      memos: "memos"
     }
   },
   mounted () {      //mounted()でアプリ起動のタイミングで関数を実行
@@ -24,10 +24,10 @@ export default {
 
     // 関数setMemoを定義
     setMemo: function () {
+
       axios.get('/api/memos') //axios.HTTPリクエスト(URL)で呼び出す
       .then(response => (
-        this.memos = response.date
-        ))
+        this.memos = response.data))
     }
   }
 }
